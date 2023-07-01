@@ -2,6 +2,7 @@ package com.company.summative.controller;
 
 import com.company.summative.models.Magic8;
 import com.company.summative.models.Question;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -38,15 +39,19 @@ public class Magic8Controller {
     }
 
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
+    @ResponseStatus(value=HttpStatus.OK)
     @ResponseBody
     public Magic8 getAnswer(@RequestBody(required = false) Question question){
         int index = random.nextInt( 20);
-        System.out.println("Index: "+index);
         Magic8 m8 = magic8List.get(index);
         if(question != null){
             m8.setQuestion(question.getQuestion());
         }
         return m8;
     }
+
+
+
+
 
 }
