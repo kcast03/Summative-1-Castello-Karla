@@ -2,32 +2,22 @@ package com.company.summative.controller;
 
 import com.company.summative.models.Question;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
+@WebMvcTest(Magic8Controller.class)
 class Magic8ControllerTest {
 
-
-
-
+    @Autowired
     private MockMvc mockMvc;
 
-    @BeforeEach
-    public  void setUp(){
-        mockMvc = MockMvcBuilders.standaloneSetup(new Magic8Controller()).build();
-    }
 
     ObjectMapper objectMapper = new ObjectMapper();
     @Test
@@ -45,7 +35,7 @@ class Magic8ControllerTest {
     public void shouldReturnAnswerWithQuestionRequestBody() throws  Exception{
 
         Question question = new Question();
-        question.setQuestion("Will Biden win re-election");
+        question.setQuestion("Will Biden win re-election?");
 
         mockMvc.perform(
                 MockMvcRequestBuilders.post("/magic")

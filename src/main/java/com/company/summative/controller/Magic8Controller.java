@@ -42,7 +42,7 @@ public class Magic8Controller {
     @ResponseStatus(value=HttpStatus.OK)
     @ResponseBody
     public Magic8 getAnswer(@RequestBody(required = false) Question question){
-        int index = random.nextInt( 20);
+        int index = random.nextInt( magic8List.size());
         Magic8 m8 = magic8List.get(index);
         if(question != null){
             m8.setQuestion(question.getQuestion());

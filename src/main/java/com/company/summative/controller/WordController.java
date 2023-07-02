@@ -15,16 +15,16 @@ public class WordController {
 
     //list of words and their id and definitions
     public WordController() {
-        Definition Resilient = new Definition(1, "Resilient", "The ability to bounce back after a challenge or setback");
-        Definition Abundant = new Definition(2, "Abundant", "More than enough");
-        Definition Diligent = new Definition(3, "Diligent", "hardworking");
-        Definition Impartial = new Definition(4, "Impartial", "The act of being fair or unbiased");
-        Definition Novice = new Definition(5, "Novice", "A person with little experience in a field or situation");
-        Definition Frugal = new Definition(6, "Frugal", "Being diligent when spending on resources such as food, money, or time. Not being wasteful  ");
-        Definition Lucid = new Definition(7, "Lucid", "Easily understandable");
-        Definition Tenacious = new Definition(8, "Tenacious", "Being persistent");
-        Definition Melancholy = new Definition(9, "Melancholy", "Feeling a reflective sadness with no reason");
-        Definition Nebulous = new Definition(10, "Nebulous", "vague or unclear");
+        Definition Resilient = new Definition( "Resilient", "The ability to bounce back after a challenge or setback");
+        Definition Abundant = new Definition( "Abundant", "More than enough");
+        Definition Diligent = new Definition( "Diligent", "hardworking");
+        Definition Impartial = new Definition( "Impartial", "The act of being fair or unbiased");
+        Definition Novice = new Definition( "Novice", "A person with little experience in a field or situation");
+        Definition Frugal = new Definition("Frugal", "Being diligent when spending on resources such as food, money, or time. Not being wasteful  ");
+        Definition Lucid = new Definition("Lucid", "Easily understandable");
+        Definition Tenacious = new Definition("Tenacious", "Being persistent");
+        Definition Melancholy = new Definition("Melancholy", "Feeling a reflective sadness with no reason");
+        Definition Nebulous = new Definition("Nebulous", "vague or unclear");
 
         wordList = Arrays.asList(Resilient, Abundant, Diligent, Impartial, Novice, Frugal, Lucid, Tenacious, Melancholy, Nebulous);
     }

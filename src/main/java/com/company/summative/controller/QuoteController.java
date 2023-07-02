@@ -30,7 +30,6 @@ public class QuoteController {
         Quote quote10 = new Quote("Work hard in silence, let your success be the noise.", "Frank Ocean");
 
         quoteList = Arrays.asList(quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9, quote10);
-
     }
 
 

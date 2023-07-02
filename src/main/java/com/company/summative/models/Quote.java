@@ -15,8 +15,8 @@ public class Quote {
     public Quote(String quote, String author){
         this.quote = quote;
         this.author = author;
-        id = count;
         count++;
+        id = count;
     }
 
     public int getId() {

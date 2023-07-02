@@ -11,12 +11,13 @@ public class Definition {
     private String word;
     private String definition;
 
-
+    private static int count = 0;
     //constructor
-    public Definition(int id, String word, String definition) {
-        this.id = id;
+    public Definition(String word, String definition) {
         this.word = word;
         this.definition = definition;
+        count++;
+        this.id = count;
     }
 
     //getters and setters
@@ -55,5 +56,14 @@ public class Definition {
     @Override
     public int hashCode() {
         return Objects.hash(id, word, definition);
+    }
+
+    @Override
+    public String toString() {
+        return "Definition{" +
+                "id=" + id +
+                ", word='" + word + '\'' +
+                ", definition='" + definition + '\'' +
+                '}';
     }
 }
