@@ -1,6 +1,6 @@
 package com.company.summative.controller;
 
-import com.company.summative.models.Magic8;
+import com.company.summative.models.Answer;
 import com.company.summative.models.Question;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,37 +13,37 @@ import java.util.Random;
 @RestController
 public class Magic8Controller {
 
-    private List<Magic8> magic8List = new ArrayList<>();
+    private List<Answer> answerList = new ArrayList<>();
     Random random= new Random();
     public Magic8Controller(){
-        magic8List.add(new Magic8("It is certain."));
-        magic8List.add(new Magic8("Ask again later."));
-        magic8List.add(new Magic8("It is decidedly so."));
-        magic8List.add(new Magic8("Without a doubt."));
-        magic8List.add(new Magic8("Don't count on it."));
-        magic8List.add(new Magic8("Yes definitely."));
-        magic8List.add(new Magic8("Concentrate and ask again."));
-        magic8List.add(new Magic8("You may rely on it."));
-        magic8List.add(new Magic8("As I see it, yes."));
-        magic8List.add(new Magic8("Cannot predict now."));
-        magic8List.add(new Magic8("Very doubtful."));
-        magic8List.add(new Magic8("Most likely."));
-        magic8List.add(new Magic8("Outlook good."));
-        magic8List.add(new Magic8("My sources say no."));
-        magic8List.add(new Magic8("Yes."));
-        magic8List.add(new Magic8("Signs point to yes."));
-        magic8List.add(new Magic8("Reply hazy, try again."));
-        magic8List.add(new Magic8("Outlook not so good."));
-        magic8List.add(new Magic8("Better not tell you now."));
-        magic8List.add(new Magic8("My reply is no."));
+        answerList.add(new Answer("It is certain."));
+        answerList.add(new Answer("Ask again later."));
+        answerList.add(new Answer("It is decidedly so."));
+        answerList.add(new Answer("Without a doubt."));
+        answerList.add(new Answer("Don't count on it."));
+        answerList.add(new Answer("Yes definitely."));
+        answerList.add(new Answer("Concentrate and ask again."));
+        answerList.add(new Answer("You may rely on it."));
+        answerList.add(new Answer("As I see it, yes."));
+        answerList.add(new Answer("Cannot predict now."));
+        answerList.add(new Answer("Very doubtful."));
+        answerList.add(new Answer("Most likely."));
+        answerList.add(new Answer("Outlook good."));
+        answerList.add(new Answer("My sources say no."));
+        answerList.add(new Answer("Yes."));
+        answerList.add(new Answer("Signs point to yes."));
+        answerList.add(new Answer("Reply hazy, try again."));
+        answerList.add(new Answer("Outlook not so good."));
+        answerList.add(new Answer("Better not tell you now."));
+        answerList.add(new Answer("My reply is no."));
     }
 
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value=HttpStatus.OK)
     @ResponseBody
-    public Magic8 getAnswer(@RequestBody(required = false) Question question){
-        int index = random.nextInt( magic8List.size());
-        Magic8 m8 = magic8List.get(index);
+    public Answer getAnswer(@RequestBody(required = false) Question question){
+        int index = random.nextInt( answerList.size());
+        Answer m8 = answerList.get(index);
         if(question != null){
             m8.setQuestion(question.getQuestion());
         }

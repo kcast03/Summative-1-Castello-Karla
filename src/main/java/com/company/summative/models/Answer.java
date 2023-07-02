@@ -2,7 +2,7 @@ package com.company.summative.models;
 
 import java.util.Objects;
 
-public class Magic8 {
+public class Answer {
 
     private String question;
 
@@ -42,8 +42,8 @@ public class Magic8 {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Magic8 magic8 = (Magic8) o;
-        return Objects.equals(question, magic8.question) && Objects.equals(answer, magic8.answer);
+        Answer answer = (Answer) o;
+        return Objects.equals(question, answer.question) && Objects.equals(this.answer, answer.answer);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class Magic8 {
     }
 private int id;
     static int count = 0;
-    public Magic8(String ans){
+    public Answer(String ans){
         this.answer = ans;
         count +=1;
         id = count;
